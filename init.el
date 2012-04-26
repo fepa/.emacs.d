@@ -112,6 +112,16 @@
 ;; configure tab width
 (defun coffee-custom ()
   "coffee-mode-hook"
- (set (make-local-variable 'tab-width) 2))
+  ;; Coffeescript uses 2 spaces
+  (set (make-local-variable 'tab-width) 2)
+  ;; If you don't want your compiled files to be wrapped
+  (setq coffee-args-compile '("-c" "--bare"))
+  ;; *Messages* spam
+  (setq coffee-debug-mode t)
+  ;; Emacs key binding
+  (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
+  ;; Compile '.coffee' files on every save
+  (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
+)
 (add-hook 'coffee-mode-hook
   '(lambda() (coffee-custom)))

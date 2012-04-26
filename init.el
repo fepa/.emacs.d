@@ -125,3 +125,9 @@
 )
 (add-hook 'coffee-mode-hook
   '(lambda() (coffee-custom)))
+
+;; yaml mode
+(defvar yaml-path (concat emacs-submodules-path "yaml-mode/"))
+(add-to-list 'load-path yaml-path)
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

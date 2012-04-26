@@ -102,3 +102,16 @@
 ;      )
 (yas/global-mode 1)
 (setq yas/prompt-functions '(yas/dropdown-prompt))
+
+;; Coffee mode
+(defvar coffee-path (concat emacs-submodules-path "coffee-mode/"))
+(add-to-list 'load-path coffee-path)
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
+;; configure tab width
+(defun coffee-custom ()
+  "coffee-mode-hook"
+ (set (make-local-variable 'tab-width) 2))
+(add-hook 'coffee-mode-hook
+  '(lambda() (coffee-custom)))

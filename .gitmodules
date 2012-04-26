@@ -1,3 +1,6 @@
 [submodule "submodules/yasnippet"]
 	path = submodules/yasnippet
 	url = git://github.com/capitaomorte/yasnippet.git
+[submodule "submodules/coffee-mode"]
+	path = submodules/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git

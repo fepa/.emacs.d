@@ -131,3 +131,16 @@
 (add-to-list 'load-path yaml-path)
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
+;; haml mode
+(defvar haml-path (concat emacs-submodules-path "haml-mode/"))
+(add-to-list 'load-path haml-path)
+(require 'haml-mode)
+(add-to-list 'auto-mode-alist '("\\.haml$" . sass-mode))
+
+;; sass mode (requires haml mode)
+(defvar sass-path (concat emacs-submodules-path "sass-mode/"))
+(add-to-list 'load-path sass-path)
+(require 'sass-mode)
+(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
+(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))

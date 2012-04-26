@@ -7,3 +7,9 @@
 [submodule "submodules/yaml-mode"]
 	path = submodules/yaml-mode
 	url = git://github.com/yoshiki/yaml-mode.git
+[submodule "submodules/sass-mode"]
+	path = submodules/sass-mode
+	url = git://github.com/nex3/sass-mode.git
+[submodule "submodules/haml-mode"]
+	path = submodules/haml-mode
+	url = git://github.com/nex3/haml-mode.git

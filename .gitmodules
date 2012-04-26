@@ -13,3 +13,6 @@
 [submodule "submodules/haml-mode"]
 	path = submodules/haml-mode
 	url = git://github.com/nex3/haml-mode.git
+[submodule "submodules/pony-mode"]
+	path = submodules/pony-mode
+	url = git://github.com/davidmiller/pony-mode.git

@@ -144,3 +144,8 @@
 (require 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
+
+;; pony-mode
+(defvar pony-path (concat emacs-submodules-path "pony-mode/src"))
+(add-to-list 'load-path pony-path)
+(require 'pony-mode)

@@ -16,3 +16,6 @@
 [submodule "submodules/pony-mode"]
 	path = submodules/pony-mode
 	url = git://github.com/davidmiller/pony-mode.git
+[submodule "submodules/ecb"]
+	path = submodules/ecb
+	url = git://github.com/emacsmirror/ecb.git

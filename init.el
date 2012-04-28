@@ -149,3 +149,8 @@
 (defvar pony-path (concat emacs-submodules-path "pony-mode/src"))
 (add-to-list 'load-path pony-path)
 (require 'pony-mode)
+
+;; ecb
+(defvar ecb-path (concat emacs-submodules-path "ecb/"))
+(add-to-list 'load-path ecb-path)
+(require 'ecb)

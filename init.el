@@ -146,8 +146,9 @@
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
 
 ;; pony-mode
-(defvar pony-path (concat emacs-submodules-path "pony-mode/src"))
-(add-to-list 'load-path pony-path)
+(defvar pony-path (concat emacs-submodules-path "pony-mode/"))
+(add-to-list 'load-path (concat pony-path "src"))
+(yas/load-directory (concat pony-path "snippets"))
 (require 'pony-mode)
 
 ;; ecb

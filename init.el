@@ -155,3 +155,14 @@
 (defvar ecb-path (concat emacs-submodules-path "ecb/"))
 (add-to-list 'load-path ecb-path)
 (require 'ecb)
+
+;; auto-complete
+(defvar auto-complete-path (concat emacs-submodules-path "auto-complete/"))
+(add-to-list 'load-path auto-complete-path)
+;; popup library
+(defvar popup-path (concat emacs-submodules-path "popup/"))
+(add-to-list 'load-path popup-path)
+;; add the dictionary
+(require 'auto-complete-config)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories (concat auto-complete-path "dict"))

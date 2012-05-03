@@ -67,6 +67,10 @@
 ; Keybindings
 ; ====================
 
+;; auto indent
+(add-hook 'lisp-mode-hook '(lambda ()
+      (local-set-key (kbd "RET") 'newline-and-indent)))
+
 ;;Change 'add new todo'-shortcut
 (global-set-key "\C-c\r" 'org-insert-todo-heading)
 

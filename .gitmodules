@@ -19,3 +19,6 @@
 [submodule "submodules/ecb"]
 	path = submodules/ecb
 	url = git://github.com/emacsmirror/ecb.git
+[submodule "submodules/scss-mode"]
+	path = submodules/scss-mode
+	url = git://github.com/antonj/scss-mode.git

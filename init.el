@@ -170,3 +170,11 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories (concat auto-complete-path "dict"))
+
+;; scss mode
+(setq exec-path (cons (expand-file-name "/usr/local/bin/sass") exec-path))
+(defvar scss-path (concat emacs-submodules-path "scss-mode/"))
+(add-to-list 'load-path scss-path)
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(require 'scss-mode)

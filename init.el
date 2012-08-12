@@ -179,3 +179,15 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
 (require 'scss-mode)
+
+;; hardcore mode
+;; Use shell-like backspace C-h, rebind help to F1
+(define-key key-translation-map [?\C-h] [?\C-?])
+(global-set-key (kbd "<f1>") 'help-command)
+;;If hardcore-mode is too hardcore for you, you can add these before you require the mode:
+;;(setq too-hardcore-backspace t)
+;;(setq too-hardcore-return t)
+(defvar hardcore-path (concat emacs-submodules-path "hardcore-mode"))
+(add-to-list 'load-path hardcore-path)
+(require 'hardcore-mode)
+(global-hardcore-mode)

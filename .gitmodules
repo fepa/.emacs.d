@@ -22,3 +22,6 @@
 [submodule "submodules/scss-mode"]
 	path = submodules/scss-mode
 	url = git://github.com/antonj/scss-mode.git
+[submodule "submodules/hardcore-mode"]
+	path = submodules/hardcore-mode
+	url = git://github.com/magnars/hardcore-mode.el.git

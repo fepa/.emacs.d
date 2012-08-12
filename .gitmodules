@@ -25,3 +25,6 @@
 [submodule "submodules/hardcore-mode"]
 	path = submodules/hardcore-mode
 	url = git://github.com/magnars/hardcore-mode.el.git
+[submodule "submodules/nyan-mode"]
+	path = submodules/nyan-mode
+	url = git://github.com/TeMPOraL/nyan-mode.git

@@ -191,3 +191,9 @@
 (add-to-list 'load-path hardcore-path)
 (require 'hardcore-mode)
 (global-hardcore-mode)
+
+;; nyan mode
+(defvar nyan-path (concat emacs-submodules-path "nyan-mode"))
+(add-to-list 'load-path nyan-path)
+(require 'nyan-mode)
+(global-nyan-mode)

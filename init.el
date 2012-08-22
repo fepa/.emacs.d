@@ -39,7 +39,7 @@
 (set-face-background 'modeline "DarkViolet")
 (set-face-foreground 'modeline "honeydew2")
 ;;Set font to Inconsolata
-(set-frame-font "Inconsolata:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
+(set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
 ;; Color settings
 (set-background-color "Black")
 (set-foreground-color "honeydew2")

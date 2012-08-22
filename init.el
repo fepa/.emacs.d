@@ -24,6 +24,8 @@
 (setq-default indent-tabs-mode nil)
 ;; 4 spaces offset
 (setq-default tab-width 4)
+;; 2 spaces for javascript
+(setq js-indent-level 2)
 
 ;; Delete selections
 (delete-selection-mode t)
@@ -81,7 +83,7 @@
 ;;Kill entire word rather than letter-by-letter
 (global-set-key "\C-w" 'backward-kill-word)
 ;;(global-set-key "\C-x\C-k" 'kill-region)
-;;(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
 
 ;;Paste from clipboard
 (global-set-key "\C-x\C-y" 'clipboard-yank)

@@ -28,3 +28,6 @@
 [submodule "submodules/nyan-mode"]
 	path = submodules/nyan-mode
 	url = git://github.com/TeMPOraL/nyan-mode.git
+[submodule "submodules/ace-jump-mode"]
+	path = submodules/ace-jump-mode
+	url = git://github.com/winterTTr/ace-jump-mode.git

@@ -188,3 +188,23 @@
 (add-to-list 'load-path nyan-path)
 (require 'nyan-mode)
 (nyan-mode)
+
+;; ace jump mode
+(defvar ace-path (concat emacs-submodules-path "ace-jump-mode"))
+(add-to-list 'load-path ace-path)
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+;; Key bind for jumping
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+;; jump back function
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+  "Ace jump back:-)"
+  t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)

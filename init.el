@@ -89,6 +89,9 @@
 (global-set-key "\C-x\C-y" 'clipboard-yank)
 (global-set-key "\C-x\C-w" 'clipboard-kill-region)
 
+;; Comment region
+(global-set-key "\C-c\C-c" 'comment-region)
+
 ; =====================
 ; Modes
 ; =====================

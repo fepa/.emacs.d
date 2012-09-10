@@ -41,7 +41,6 @@
 (set-background-color "#121212")
 (set-foreground-color "honeydew2")
 (set-cursor-color "DarkViolet")
-(set-face-background 'highlight "#222222")
 (set-face-background 'region "DarkViolet")
 ;; Font
 (set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
@@ -221,3 +220,7 @@
 (setq fci-rule-column 80)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
+
+;; Highlight current line
+(global-hl-line-mode 1)
+(set-face-background 'highlight "#222222")

@@ -202,7 +202,7 @@
   "Emacs quick move minor mode"
   t)
 ;; Key bind for jumping
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-ö") 'ace-jump-mode)
 ;; jump back function
 (autoload
   'ace-jump-mode-pop-mark

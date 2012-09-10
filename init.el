@@ -35,15 +35,16 @@
  display-time-24hr-format t)
 (display-time)
 
-;;Colors
+;; Colors
 (set-face-background 'modeline "DarkViolet")
 (set-face-foreground 'modeline "honeydew2")
-;;Set font to Inconsolata
-(set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
-;; Color settings
-(set-background-color "Black")
+(set-background-color "#121212")
 (set-foreground-color "honeydew2")
 (set-cursor-color "DarkViolet")
+(set-face-background 'highlight "#222222")
+(set-face-background 'region "DarkViolet")
+;; Font
+(set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
 (global-font-lock-mode 3)
 
 ;;Remove UI (toolbar, scrollbar, menu)

@@ -212,3 +212,12 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+;; fill column indicator mode
+(defvar fill-column-indicator-path (concat emacs-submodules-path "fill-column-indicator"))
+(add-to-list 'load-path fill-column-indicator-path)
+(require 'fill-column-indicator)
+(setq fci-rule-color "#222222")
+(setq fci-rule-column 80)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)

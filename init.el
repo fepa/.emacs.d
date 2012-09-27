@@ -17,8 +17,12 @@
 ;; Make *Messages* store more messages
 (setq message-log-max t)
 
-;;Line numbers
+;;Line & column numbers
 (global-linum-mode 1)
+(column-number-mode 1)
+
+;; Truncate lines
+(define-key global-map [f5] 'toggle-truncate-lines)
 
 ;; Spaces instead of tabs
 (setq-default indent-tabs-mode nil)
@@ -217,7 +221,6 @@
 (add-to-list 'load-path fill-column-indicator-path)
 (require 'fill-column-indicator)
 (setq fci-rule-color "#222222")
-(setq fci-rule-column 80)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
 

@@ -34,3 +34,6 @@
 [submodule "submodules/fill-column-indicator"]
 	path = submodules/fill-column-indicator
 	url = git://github.com/alpaker/Fill-Column-Indicator.git
+[submodule "submodules/autopair"]
+	path = submodules/autopair
+	url = git://github.com/capitaomorte/autopair.git

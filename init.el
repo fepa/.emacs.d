@@ -227,3 +227,9 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 (set-face-background 'highlight "#222222")
+
+;; Autopair
+(defvar autopair-path (concat emacs-submodules-path "autopair"))
+(add-to-list 'load-path autopair-path)
+(require 'autopair)
+(autopair-global-mode)

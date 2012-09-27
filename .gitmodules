@@ -37,3 +37,6 @@
 [submodule "submodules/autopair"]
 	path = submodules/autopair
 	url = git://github.com/capitaomorte/autopair.git
+[submodule "submodules/markdown-mode"]
+	path = submodules/markdown-mode
+	url = git://github.com/defunkt/markdown-mode.git

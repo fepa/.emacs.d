@@ -237,4 +237,5 @@
 ;; markdown mode
 (defvar markdown-path (concat emacs-submodules-path "markdown-mode"))
 (add-to-list 'load-path markdown-path)
-(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t) (setq auto-mode-alist (cons '("\\.text" . markdown-mode) auto-mode-alist))
+(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
+(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))

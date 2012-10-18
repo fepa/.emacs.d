@@ -34,6 +34,9 @@
 ;; Delete selections
 (delete-selection-mode t)
 
+;; Remove trailing white space on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Show time in modeline
 (setq display-time-day-and-date t
  display-time-24hr-format t)
@@ -239,3 +242,4 @@
 (add-to-list 'load-path markdown-path)
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
+(add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode t)))

@@ -235,7 +235,7 @@
 (defvar autopair-path (concat emacs-submodules-path "autopair"))
 (add-to-list 'load-path autopair-path)
 (require 'autopair)
-(autopair-global-mode)
+;;(autopair-global-mode)
 
 ;; markdown mode
 (defvar markdown-path (concat emacs-submodules-path "markdown-mode"))

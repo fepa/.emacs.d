@@ -43,3 +43,9 @@
 [submodule "submodules/rinari"]
 	path = submodules/rinari
 	url = git://github.com/eschulte/rinari.git
+[submodule "submodules/inf-ruby"]
+	path = submodules/inf-ruby
+	url = git://github.com/nonsequitur/inf-ruby.git
+[submodule "submodules/jump"]
+	path = submodules/jump
+	url = git://github.com/emacsmirror/jump.git

@@ -243,3 +243,13 @@
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 (add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode t)))
+
+;; jump, inf-ruby and rinari
+(defvar jump-path (concat emacs-submodules-path "jump"))
+(add-to-list 'load-path jump-path)
+(require 'jump)
+(defvar inf-ruby-path (concat emacs-submodules-path "inf-ruby"))
+(add-to-list 'load-path inf-ruby-path)
+(defvar rinari-path (concat emacs-submodules-path "rinari"))
+(add-to-list 'load-path rinari-path)
+(require 'rinari)

@@ -137,7 +137,7 @@
   ;; Emacs key binding
   (define-key coffee-mode-map [(meta r)] 'coffee-compile-buffer)
   ;; Compile '.coffee' files on every save
-  (add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
+  ;;(add-hook 'coffee-mode-hook '(lambda () (coffee-cos-mode t)))
 )
 (add-hook 'coffee-mode-hook
   '(lambda() (coffee-custom)))
@@ -168,9 +168,9 @@
 (require 'pony-mode)
 
 ;; ecb
-(defvar ecb-path (concat emacs-submodules-path "ecb/"))
-(add-to-list 'load-path ecb-path)
-(require 'ecb)
+;;(defvar ecb-path (concat emacs-submodules-path "ecb/"))
+;;(add-to-list 'load-path ecb-path)
+;;(require 'ecb)
 
 ;; scss mode
 (setq exec-path (cons (expand-file-name "/usr/local/bin/sass") exec-path))
@@ -188,9 +188,9 @@
 ;;If hardcore-mode is too hardcore for you, you can add these before you require the mode:
 ;;(setq too-hardcore-backspace t)
 ;;(setq too-hardcore-return t)
-(defvar hardcore-path (concat emacs-submodules-path "hardcore-mode"))
-(add-to-list 'load-path hardcore-path)
-(require 'hardcore-mode)
+;;(defvar hardcore-path (concat emacs-submodules-path "hardcore-mode"))
+;;(add-to-list 'load-path hardcore-path)
+;;(require 'hardcore-mode)
 ;;(global-hardcore-mode)
 
 ;; nyan mode
@@ -232,10 +232,13 @@
 (set-face-background 'highlight "#222222")
 
 ;; Autopair
-(defvar autopair-path (concat emacs-submodules-path "autopair"))
-(add-to-list 'load-path autopair-path)
-(require 'autopair)
+;;(defvar autopair-path (concat emacs-submodules-path "autopair"))
+;;(add-to-list 'load-path autopair-path)
+;;(require 'autopair)
 ;;(autopair-global-mode)
+
+;; Parenthesis matching
+(show-paren-mode t)
 
 ;; markdown mode
 (defvar markdown-path (concat emacs-submodules-path "markdown-mode"))
@@ -253,3 +256,7 @@
 (defvar rinari-path (concat emacs-submodules-path "rinari"))
 (add-to-list 'load-path rinari-path)
 (require 'rinari)
+(global-rinari-mode)
+
+;; ido mode
+(ido-mode t)

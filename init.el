@@ -159,18 +159,6 @@
 (add-to-list 'load-path sass-path)
 (require 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
-(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-
-;; pony-mode
-(defvar pony-path (concat emacs-submodules-path "pony-mode/"))
-(add-to-list 'load-path (concat pony-path "src"))
-(yas/load-directory (concat pony-path "snippets"))
-(require 'pony-mode)
-
-;; ecb
-;;(defvar ecb-path (concat emacs-submodules-path "ecb/"))
-;;(add-to-list 'load-path ecb-path)
-;;(require 'ecb)
 
 ;; scss mode
 (setq exec-path (cons (expand-file-name "/usr/local/bin/sass") exec-path))
@@ -179,7 +167,14 @@
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
+(setq css-indent-offset 2)
 (require 'scss-mode)
+
+;; pony-mode
+(defvar pony-path (concat emacs-submodules-path "pony-mode/"))
+(add-to-list 'load-path (concat pony-path "src"))
+(yas/load-directory (concat pony-path "snippets"))
+(require 'pony-mode)
 
 ;; hardcore mode
 ;; Use shell-like backspace C-h, rebind help to F1
@@ -231,12 +226,6 @@
 (global-hl-line-mode 1)
 (set-face-background 'highlight "#222222")
 
-;; Autopair
-;;(defvar autopair-path (concat emacs-submodules-path "autopair"))
-;;(add-to-list 'load-path autopair-path)
-;;(require 'autopair)
-;;(autopair-global-mode)
-
 ;; Parenthesis matching
 (show-paren-mode t)
 
@@ -260,3 +249,4 @@
 
 ;; ido mode
 (ido-mode t)
+(setq ido-enable-flex-matching t)

@@ -16,9 +16,6 @@
 [submodule "submodules/pony-mode"]
 	path = submodules/pony-mode
 	url = git://github.com/davidmiller/pony-mode.git
-[submodule "submodules/ecb"]
-	path = submodules/ecb
-	url = git://github.com/emacsmirror/ecb.git
 [submodule "submodules/scss-mode"]
 	path = submodules/scss-mode
 	url = git://github.com/antonj/scss-mode.git
@@ -34,9 +31,6 @@
 [submodule "submodules/fill-column-indicator"]
 	path = submodules/fill-column-indicator
 	url = git://github.com/alpaker/Fill-Column-Indicator.git
-[submodule "submodules/autopair"]
-	path = submodules/autopair
-	url = git://github.com/capitaomorte/autopair.git
 [submodule "submodules/markdown-mode"]
 	path = submodules/markdown-mode
 	url = git://github.com/defunkt/markdown-mode.git

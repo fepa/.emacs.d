@@ -43,3 +43,6 @@
 [submodule "submodules/jump"]
 	path = submodules/jump
 	url = git://github.com/emacsmirror/jump.git
+[submodule "submodules/magit"]
+	path = submodules/magit
+	url = git://github.com/magit/magit.git

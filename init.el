@@ -250,3 +250,8 @@
 ;; ido mode
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+
+;; magit
+(defvar magit-path (concat emacs-submodules-path "magit"))
+(add-to-list 'load-path magit-path)
+(require 'magit)

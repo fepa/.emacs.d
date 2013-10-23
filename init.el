@@ -1,110 +1,12 @@
 ;; -*-no-byte-compile: t; -*-
 
-; ====================
-; Load Paths
-; ====================
+;; Setup load paths
 (defvar emacs-submodules-path "~/.emacs.d/submodules/")
-; add various load paths
 (add-to-list 'load-path emacs-submodules-path)
 
-; ====================
-; Configurations
-; ====================
-;; Separate custom file
-(setq custom-file "~/.emacs.d/.emacs-custom.el")
-(load custom-file 'noerror)
-
-;; Make *Messages* store more messages
-(setq message-log-max t)
-
-;;Line & column numbers
-(global-linum-mode 1)
-(column-number-mode 1)
-
-;; Truncate lines
-(define-key global-map [f5] 'toggle-truncate-lines)
-
-;; Spaces instead of tabs
-(setq-default indent-tabs-mode nil)
-;; 4 spaces offset
-(setq-default tab-width 4)
-;; 2 spaces for javascript
-(setq js-indent-level 2)
-
-;; Delete selections
-(delete-selection-mode t)
-
-;; Remove trailing white space on save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; Always end file with newline
-(setq require-final-newline t)
-
-;; Show time in modeline
-(setq display-time-day-and-date t
- display-time-24hr-format t)
-(display-time)
-
-;; Colors
-(set-face-background 'modeline "DarkViolet")
-(set-face-foreground 'modeline "honeydew2")
-(set-background-color "#121212")
-(set-foreground-color "honeydew2")
-(set-cursor-color "DarkViolet")
-(set-face-background 'region "DarkViolet")
-;; Font
-(set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=100:scalable=true")
-(global-font-lock-mode 3)
-
-;;Remove UI (toolbar, scrollbar, menu)
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-;;Remove splash screen
-(setq inhibit-splash-screen t)
-;;Change scratch message
-(setq initial-scratch-message "Welcome to emacs. Use the force and achieve your goals, young internet ninja.")
-
-;;Enable copy outside emacs
-(setq x-select-enable-clipboard t)
-
-;; Smoother scrolling, scroll one line at a time (less "jumpy" than default)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
-
-; ====================
-; Keybindings
-; ====================
-
-;; auto indent
-(add-hook 'lisp-mode-hook '(lambda ()
-      (local-set-key (kbd "RET") 'newline-and-indent)))
-
-;;Change 'add new todo'-shortcut
-(global-set-key "\C-c\r" 'org-insert-todo-heading)
-
-;; Bind alt-x => ctrl-x
-(global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
-
-;;Kill entire word rather than letter-by-letter
-(global-set-key "\C-w" 'backward-kill-word)
-;;(global-set-key "\C-x\C-k" 'kill-region)
-(global-set-key "\C-c\C-k" 'kill-region)
-
-;;Paste from clipboard
-(global-set-key "\C-x\C-y" 'clipboard-yank)
-(global-set-key "\C-x\C-w" 'clipboard-kill-region)
-
-;; Comment region
-(global-set-key "\C-c\C-c" 'comment-region)
-
-; =====================
-; Modes
-; =====================
+(load-file "~/.emacs.d/ui.el")
+(load-file "~/.emacs.d/general.el")
+(load-file "~/.emacs.d/keybinds.el")
 
 ;; YASnippet
 (defvar yasnippet-path (concat emacs-submodules-path "yasnippet/"))
@@ -224,13 +126,6 @@
 (setq fci-rule-color "#222222")
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
-
-;; Highlight current line
-(global-hl-line-mode 1)
-(set-face-background 'highlight "#222222")
-
-;; Parenthesis matching
-(show-paren-mode t)
 
 ;; markdown mode
 (defvar markdown-path (concat emacs-submodules-path "markdown-mode"))

@@ -37,6 +37,9 @@
 ;; Remove trailing white space on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Always end file with newline
+(setq require-final-newline t)
+
 ;; Show time in modeline
 (setq display-time-day-and-date t
  display-time-24hr-format t)
@@ -248,8 +251,9 @@
 (global-rinari-mode)
 
 ;; ido mode
-(ido-mode t)
 (setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode t)
 
 ;; magit
 (defvar magit-path (concat emacs-submodules-path "magit"))

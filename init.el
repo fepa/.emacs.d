@@ -1,5 +1,12 @@
 ;; -*-no-byte-compile: t; -*-
 
+;; Package managment
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (package-initialize)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  )
+
 ;; Setup load paths
 (defvar emacs-submodules-path "~/.emacs.d/submodules/")
 (add-to-list 'load-path emacs-submodules-path)
@@ -154,3 +161,10 @@
 (defvar magit-path (concat emacs-submodules-path "magit"))
 (add-to-list 'load-path magit-path)
 (require 'magit)
+
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-Å") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-Ä") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-Ö") 'mc/mark-all-like-this)

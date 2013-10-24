@@ -168,6 +168,20 @@
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C-Å") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-Ä") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-Ö") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-ä") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-å") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-ö") 'mc/mark-all-like-this)
+
+;; git gutter (fringe)
+(require 'git-gutter-fringe)
+(set-face-foreground 'git-gutter-fr:modified "DarkViolet")
+(fringe-helper-define 'git-gutter-fr:modified nil
+  "...XX..."
+  "..X..X.."
+  ".X....X."
+  "X......X"
+  "X......X"
+  ".X....X."
+  "..X..X.."
+  "...XX...")
+(global-git-gutter-mode)

@@ -59,6 +59,7 @@
 (add-to-list 'load-path yaml-path)
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
 ;; haml mode
 (defvar haml-path (concat emacs-submodules-path "haml-mode/"))
@@ -141,6 +142,8 @@
 (setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 (add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode t)))
 
+;; Associate Rake files with ruby-mode
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
 ;; jump, inf-ruby and rinari
 (defvar jump-path (concat emacs-submodules-path "jump"))
 (add-to-list 'load-path jump-path)

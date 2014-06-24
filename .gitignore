@@ -1,2 +1,4 @@
 *~
-eshell/history
+/eshell/history
+/elpa
+/auto-save-list

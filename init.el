@@ -5,6 +5,14 @@
   (require 'package)
   (package-initialize)
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  ;; List of installed packages
+  ;; (describe-variable package-activated-list)
+  (setq package-list '(web-mode git-gutter-fringe fringe-helper git-gutter
+                                multiple-cursors))
+  ;; install the missing packages
+  (dolist (package package-list)
+    (unless (package-installed-p package)
+      (package-install package)))
   )
 
 ;; Setup load paths

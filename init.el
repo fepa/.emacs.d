@@ -154,6 +154,10 @@
 (add-to-list 'load-path rinari-path)
 (require 'rinari)
 (global-rinari-mode)
+(setq ruby-insert-encoding-magic-comment nil)
+
+;; Associate erb files with web-mode
+(add-to-list 'auto-mode-alist '("\\.erb$" . web-mode))
 
 ;; ido mode
 (setq ido-enable-flex-matching t)

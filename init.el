@@ -189,3 +189,6 @@
   "..X..X.."
   "...XX...")
 (global-git-gutter-mode)
+
+;; winner mode (undoing buffer splits)
+(winner-mode)

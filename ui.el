@@ -1,6 +1,6 @@
 ;; Colors
-(set-face-background 'modeline "DarkViolet")
-(set-face-foreground 'modeline "honeydew2")
+(set-face-background 'mode-line "DarkViolet")
+(set-face-foreground 'mode-line "honeydew2")
 (set-background-color "#121212")
 (set-foreground-color "honeydew2")
 (set-cursor-color "DarkViolet")

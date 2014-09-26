@@ -200,3 +200,6 @@
 
 ;; winner mode (undoing buffer splits)
 (winner-mode)
+(put 'upcase-region 'disabled nil)
+
+(require 'iso-transl) ;; Fixes typing accent characters

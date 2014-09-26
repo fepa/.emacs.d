@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        upcase-region
         yaml-electric-backspace
         yaml-electric-dash-and-dot
         ))

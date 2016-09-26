@@ -12,9 +12,5 @@
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-c\C-k" 'kill-region)
 
-;; Paste from clipboard
-(global-set-key "\C-x\C-y" 'clipboard-yank)
-(global-set-key "\C-x\C-w" 'clipboard-kill-region)
-
 ;; Comment region
 (global-set-key "\C-c\C-c" 'comment-region)

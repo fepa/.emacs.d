@@ -19,11 +19,7 @@
 (setq inhibit-splash-screen t)
 
 ;; Change scratch message
-(setq initial-scratch-message "Welcome to emacs. Use the force and achieve your goals, young internet ninja.")
-
-;; Highlight current line
-(global-hl-line-mode 1)
-(set-face-background 'highlight "#222222")
+(setq initial-scratch-message "")
 
 ;; Parenthesis matching
 (show-paren-mode t)

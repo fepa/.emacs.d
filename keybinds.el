@@ -14,3 +14,6 @@
 
 ;; Comment region
 (global-set-key "\C-c\C-c" 'comment-region)
+
+;; magit status
+(global-set-key "\C-c\C-g" 'magit-status)

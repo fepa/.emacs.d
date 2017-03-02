@@ -3,9 +3,14 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        c-electric-slash
+        electric-newline-and-maybe-indent
+        end-of-buffer
+        kill-region
         upcase-region
         yaml-electric-backspace
         yaml-electric-dash-and-dot
+        yas-expand
         ))
 
 (setq mc/cmds-to-run-once

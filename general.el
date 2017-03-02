@@ -13,7 +13,7 @@
 (setq-default indent-tabs-mode nil)
 ;; 4 spaces offset
 (setq-default tab-width 4)
-;; 2 spaces for javascript
+;; 2 spaces for javascript and css
 (setq js-indent-level 2)
 
 ;; Delete selections

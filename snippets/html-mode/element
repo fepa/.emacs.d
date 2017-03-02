@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: element
+# key: el
+# --
+<${1:div}>$0</$1>

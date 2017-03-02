@@ -4,9 +4,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(package-initialize) ;; You might already have this line
+(package-initialize)
 
-;; Bootstrap `use-package' FIXME replcae above code
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -16,20 +15,16 @@
 (load-file "~/.emacs.d/keybinds.el")
 (load-file "~/.emacs.d/fill-column-indicator.el")
 
-;; YASnippet
 (use-package yasnippet)
 (yas-global-mode 1)
 
-;; yaml mode
 (use-package yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
-;; nyan mode
 (use-package nyan-mode)
 (nyan-mode)
 
-;; ace jump mode
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -53,27 +48,22 @@
 ;;(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;;(global-fci-mode 1)
 
-;; markdown mode
 ;;(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 ;;(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
 ;;(add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode t)))
 
-;; ido mode
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode t)
 
-;; magit
 (use-package magit)
 
-;; multiple cursors
 (use-package multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C-ä") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-å") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-ö") 'mc/mark-all-like-this)
 
-;; git gutter (fringe)
 (use-package git-gutter-fringe)
 (set-face-foreground 'git-gutter-fr:modified "DarkViolet")
 (fringe-helper-define 'git-gutter-fr:modified nil
@@ -87,13 +77,12 @@
   "...XX...")
 (global-git-gutter-mode)
 
-;; winner mode (undoing buffer splits)
 (winner-mode)
 (put 'upcase-region 'disabled nil)
 
-(use-package iso-transl) ;; Fixes typing accent characters
+;; Fixes typing accent characters
+(use-package iso-transl)
 
-;; flycheck
 (use-package flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (setq flycheck-check-syntax-automatically '(save mode-enabled))
@@ -103,7 +92,7 @@
 
 (global-flycheck-mode t)
 
-;; flycheck errors on a tooltip (doesnt work on console)
+;; flycheck errors on a tooltip
 (when (display-graphic-p (selected-frame))
   (eval-after-load 'flycheck
     '(custom-set-variables
@@ -138,7 +127,6 @@
       (replace-string ">" "&gt;")
       )))
 
-;; PHP mode
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))

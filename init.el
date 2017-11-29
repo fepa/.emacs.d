@@ -104,7 +104,8 @@
          ("\\.html?\\'" . web-mode)
          ("\\.j2\\'" . web-mode)
          ("\\.jinja2\\'" . web-mode)
-         ("\\.css\\'" . web-mode))
+         ("\\.css\\'" . web-mode)
+         ("\\.scss\\'" . web-mode))
   :config (progn
             (setq web-mode-markup-indent-offset 2
                   web-mode-css-indent-offset 2
@@ -130,3 +131,9 @@
 (autoload 'php-mode "php-mode" "Major mode for editing php code." t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
+(setq python-indent-offset 4)
+(add-hook 'python-mode-hook
+          (function (lambda ()
+                      (setq indent-tabs-mode nil
+                            tab-width 4))))

@@ -137,3 +137,6 @@
           (function (lambda ()
                       (setq indent-tabs-mode nil
                             tab-width 4))))
+
+;; Zeal
+(global-set-key "\C-cd" 'zeal-at-point)

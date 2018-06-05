@@ -7,6 +7,10 @@
         electric-newline-and-maybe-indent
         end-of-buffer
         kill-region
+        org-delete-char
+        org-end-of-line
+        org-open-line
+        org-self-insert-command
         upcase-region
         yaml-electric-backspace
         yaml-electric-dash-and-dot
@@ -19,5 +23,6 @@
         fill-paragraph
         reindent-then-newline-and-indent
         sgml-slash
+        toggle-truncate-lines
         yas/expand
         ))

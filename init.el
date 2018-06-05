@@ -105,7 +105,8 @@
          ("\\.j2\\'" . web-mode)
          ("\\.jinja2\\'" . web-mode)
          ("\\.css\\'" . web-mode)
-         ("\\.scss\\'" . web-mode))
+         ("\\.scss\\'" . web-mode)
+         ("\\.ejs\\'" . web-mode))
   :config (progn
             (setq web-mode-markup-indent-offset 2
                   web-mode-css-indent-offset 2
@@ -140,3 +141,15 @@
 
 ;; Zeal
 (global-set-key "\C-cd" 'zeal-at-point)
+
+;; Disable encoding comment insertion in ruby
+(setq ruby-insert-encoding-magic-comment nil)
+
+(defun gtd ()
+   (interactive)
+   (find-file "~/Dropbox/org/inbox.org")
+   (split-window-right)
+   (find-file "~/Dropbox/org/projects.org")
+ )
+
+(setq ring-bell-function 'ignore)

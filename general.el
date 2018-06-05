@@ -6,7 +6,7 @@
 (setq message-log-max 10000)
 
 ;;Line & column numbers
-(global-linum-mode 1)
+(global-display-line-numbers-mode 1)
 (column-number-mode 1)
 
 ;; Spaces instead of tabs

@@ -5,8 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ecb-options-version "2.40")
  '(fill-column 80)
- '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
- '(grep-find-ignored-directories
+  '(grep-find-ignored-directories
    (quote
     ("SCCS" "RCS" "CVS" "MCVS" ".svn" ".git" ".hg" ".bzr" "_MTN" "_darcs" "{arch}" "node_modules" "log" "tmp" ".jhw-cache" "env")))
  '(grep-find-ignored-files
@@ -15,12 +14,7 @@
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/inbox.org" "~/Dropbox/org/reference.org")))
- '(package-selected-packages
-   (quote
-    (emoji-display zeal-at-point yasnippet yaml-mode web-mode use-package php-mode nyan-mode multiple-cursors magit git-gutter-fringe flycheck coffee-mode ace-jump-mode)))
- '(safe-local-variable-values
-   (quote
-    ((pony-settings make-pony-project :python "/home/fepa/Projecs/beatrice/bin/python" :settings "beatrice.settings.development")))))
+ )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

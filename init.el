@@ -1,4 +1,6 @@
-;; -*-no-byte-compile: t; -*-
+;;; init.el --- Felix Panozzo's emacs configuration
+
+;;; Commentary:
 
 ;; Package managment
 (require 'package)
@@ -6,150 +8,139 @@
              '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; Separate custom file
+(setq custom-file "~/.emacs.d/.emacs-custom.el")
+(load custom-file 'noerror)
 
-(load-file "~/.emacs.d/ui.el")
-(load-file "~/.emacs.d/general.el")
-(load-file "~/.emacs.d/keybinds.el")
-(load-file "~/.emacs.d/fill-column-indicator.el")
+;; Colors
+(set-face-background 'mode-line "DarkViolet")
+(set-face-foreground 'mode-line "honeydew2")
+(set-background-color "#121212")
+(set-foreground-color "honeydew2")
+(set-cursor-color "DarkViolet")
+(set-face-background 'region "DarkViolet")
 
-(use-package yasnippet)
+;; Font
+(set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=10:scalable=true")
+(global-font-lock-mode 3)
+(setq line-spacing 2)
+
+;; Remove menus and toolbars
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+;; Remove trailing white space on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Empty scratch buffer
+(setq initial-scratch-message "")
+
+;; Remove splash screen
+(setq inhibit-splash-screen t)
+
+;; Make *Messages* store more messages
+(setq message-log-max 10000)
+
+;; Spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+;; 4 spaces offset
+(setq-default tab-width 4)
+
+;; Parenthesis matching
+(show-paren-mode t)
+
+;; Line & column numbers
+(global-display-line-numbers-mode 1)
+(column-number-mode 1)
+
+;; Delete selections
+(delete-selection-mode t)
+
+;; Always end file with newline
+(setq require-final-newline t)
+
+;;Enable copy outside emacs
+(setq x-select-enable-clipboard t)
+
+;; Smoother scrolling, scroll one line at a time (less "jumpy" than default)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+
+;; Disable all alarms and bells
+(setq ring-bell-function 'ignore)
+
 (yas-global-mode 1)
-
-(use-package yaml-mode)
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
-
-(use-package nyan-mode)
 (nyan-mode)
-
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-;; Key bind for jumping
-(define-key global-map (kbd "C-ö") 'ace-jump-mode)
-;; jump back function
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
-
-;; fill column indicator mode
-;;(use-package fill-column-indicator)
-;;(setq fci-rule-color "#222222")
-;;(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-;;(global-fci-mode 1)
-
-;;(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
-;;(setq auto-mode-alist (cons '("\\.md" . markdown-mode) auto-mode-alist))
-;;(add-hook 'markdown-mode-hook (lambda () (variable-pitch-mode t)))
-
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
 (ido-mode t)
+(winner-mode)
+(global-git-gutter-mode)
+(ido-everywhere)
+(global-flycheck-mode)
+;; Read desktop file on startup
+(desktop-read)
 
-(use-package magit)
-
-(use-package multiple-cursors)
+(global-set-key [f5] 'toggle-truncate-lines)
+(global-set-key (kbd "<XF86WakeUp>") 'execute-extended-command) ;; Bind Fn to M-x
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-c\C-k" 'kill-region)
+(global-set-key "\C-c\C-c" 'comment-region)
+(global-set-key (kbd "C-ö") 'ace-jump-mode)
+(global-set-key (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(global-set-key "\C-c\C-g" 'magit-status)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C-ä") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-å") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-ö") 'mc/mark-all-like-this)
+(global-set-key "\C-cd" 'zeal-at-point)
 
-(use-package git-gutter-fringe)
-(set-face-foreground 'git-gutter-fr:modified "DarkViolet")
-(fringe-helper-define 'git-gutter-fr:modified nil
-  "...XX..."
-  "..X..X.."
-  ".X....X."
-  "X......X"
-  "X......X"
-  ".X....X."
-  "..X..X.."
-  "...XX...")
-(global-git-gutter-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.j2\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jinja2\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 
-(winner-mode)
-(put 'upcase-region 'disabled nil)
+(setq-default web-mode-markup-indent-offset 2
+              web-mode-css-indent-offset 2
+              web-mode-code-indent-offset 2
+              web-mode-script-padding 2
+              web-mode-style-padding 2
+)
 
-;; Fixes typing accent characters
-(use-package iso-transl)
-
-(use-package flycheck)
-(add-hook 'after-init-hook #'global-flycheck-mode)
-(setq flycheck-check-syntax-automatically '(save mode-enabled))
-(setq flycheck-checkers (delq 'emacs-lisp-checkdoc flycheck-checkers))
-(setq flycheck-checkers (delq 'html-tidy flycheck-checkers))
-(setq flycheck-standard-error-navigation nil)
-
-(global-flycheck-mode t)
-
-;; flycheck errors on a tooltip
-(when (display-graphic-p (selected-frame))
-  (eval-after-load 'flycheck
-    '(custom-set-variables
-      '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages))))
-
-(use-package web-mode
-  :ensure t
-  :mode (("\\.erb\\'" . web-mode)
-         ("\\.html?\\'" . web-mode)
-         ("\\.j2\\'" . web-mode)
-         ("\\.jinja2\\'" . web-mode)
-         ("\\.css\\'" . web-mode)
-         ("\\.scss\\'" . web-mode)
-         ("\\.ejs\\'" . web-mode))
-  :config (progn
-            (setq web-mode-markup-indent-offset 2
-                  web-mode-css-indent-offset 2
-                  web-mode-code-indent-offset 2
-                  web-mode-script-padding 2
-                  web-mode-style-padding 2
-                  )))
+;; Disable encoding comment insertion in ruby
+(setq-default ruby-insert-encoding-magic-comment nil)
 
 
-(defun unhtml (start end)
-  (interactive "r")
-  (save-excursion
-    (save-restriction
-      (narrow-to-region start end)
-      (goto-char (point-min))
-      (replace-string "&" "&amp;")
-      (goto-char (point-min))
-      (replace-string "<" "&lt;")
-      (goto-char (point-min))
-      (replace-string ">" "&gt;")
-      )))
+;;; Hooks:
 
-(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
-(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
 
-(setq python-indent-offset 4)
 (add-hook 'python-mode-hook
           (function (lambda ()
                       (setq indent-tabs-mode nil
                             tab-width 4))))
 
-;; Zeal
-(global-set-key "\C-cd" 'zeal-at-point)
 
-;; Disable encoding comment insertion in ruby
-(setq ruby-insert-encoding-magic-comment nil)
+;;; Code:
+
+(defun ensure-region-active (func &rest args)
+  "Only run FUNC with ARGS when region is active."
+  (when (region-active-p)
+    (apply func args)))
+(advice-add 'upcase-region :around 'ensure-region-active)
+(advice-add 'downcase-region :around 'ensure-region-active)
 
 (defun gtd ()
+  "Open gtd files."
    (interactive)
    (find-file "~/Dropbox/org/inbox.org")
    (split-window-right)
    (find-file "~/Dropbox/org/projects.org")
- )
+   )
 
-(setq ring-bell-function 'ignore)
+;;; init.el ends here

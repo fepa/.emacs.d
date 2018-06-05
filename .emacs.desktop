@@ -1,0 +1,43 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Jun  5 16:29:24 2018
+;; Desktop file format version 208
+;; Emacs version 26.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (23318 40516 772135 422000) (desktop . "208") "fepa@lastella" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font-backend xft x) (font . "-DAMA-Ubuntu Mono-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1") (font-parameter . "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=10:scalable=true") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "honeydew2") (background-color . "#121212") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "DarkViolet") (sticky) (environment) (frameset--id . "6199-22F0-6828-EA77") (frameset--mini t . t) (modeline . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (height . 46) (width . 192) (left + -1) (top . 26)) ((min-height . 4) (min-width . 20) (min-height-ignore . 2) (min-width-ignore . 11) (min-height-safe . 1) (min-width-safe . 4) (min-pixel-height . 60) (min-pixel-width . 140) (min-pixel-height-ignore . 30) (min-pixel-width-ignore . 77) (min-pixel-height-safe . 15) (min-pixel-width-safe . 28)) hc (pixel-width . 1366) (pixel-height . 689) (total-width . 195) (total-height . 45) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 680) (pixel-height . 689) (total-width . 97) (total-height . 45) (normal-height . 1.0) (normal-width . 0.5) (buffer "packages_config.el" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 1) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 102) (start . 37))) (leaf (last . t) (pixel-width . 686) (pixel-height . 689) (total-width . 98) (total-height . 45) (normal-height . 1.0) (normal-width . 0.5) (buffer "*Help*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1)))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '("web-mo" "flyc" "markdown"))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/" "/home/fepa/.emacs.d/hej.yaml" "~/.emacs.d/hej.yml" "~/.emacs.d/" "/home/fepa/.emacs.d/init.el" "/home/fepa/.emacs.d/hej.md" "~/.emacs.d/" "/home/fepa/.emacs.d/packages_config.el"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/fepa/.emacs.d/packages_config.el"
+  "packages_config.el"
+  'emacs-lisp-mode
+  '(eldoc-mode yas-minor-mode auto-revert-mode git-gutter-mode flycheck-mode)
+  102
+  '(177 nil)
+  nil
+  nil
+  '((buffer-display-time 23318 40516 49347 450000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (102 1254 1253 610 509 163 1081 1081 1080 1080 1080 1079 1080 1057 1057 1057))))
+
+(desktop-create-buffer 208
+  "/home/fepa/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(eldoc-mode yas-minor-mode auto-revert-mode git-gutter-mode flycheck-mode)
+  2744
+  '(2602 nil)
+  nil
+  nil
+  '((buffer-display-time 23318 40384 477373 30000) (buffer-file-coding-system . prefer-utf-8-unix))
+  '((mark-ring (2602 2746 2567 1480 2567 2567 2351 2567 2352 2352 1))))
+

@@ -3,4 +3,6 @@
 /auto-save-list
 games/
 eshell/
+.emacs.desktop
 .emacs.desktop.lock
+ido.last

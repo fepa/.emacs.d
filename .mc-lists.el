@@ -11,6 +11,7 @@
         org-end-of-line
         org-open-line
         org-self-insert-command
+        org-shiftright
         upcase-region
         yaml-electric-backspace
         yaml-electric-dash-and-dot

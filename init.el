@@ -23,7 +23,7 @@
 ;; Font
 (set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=10:scalable=true")
 (global-font-lock-mode 3)
-(setq line-spacing 2)
+(setq-default line-spacing 2)
 
 ;; Remove menus and toolbars
 (scroll-bar-mode -1)
@@ -61,7 +61,7 @@
 (setq require-final-newline t)
 
 ;;Enable copy outside emacs
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 
 ;; Smoother scrolling, scroll one line at a time (less "jumpy" than default)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -109,10 +109,14 @@
               web-mode-code-indent-offset 2
               web-mode-script-padding 2
               web-mode-style-padding 2
+              js-indent-level 2
 )
 
 ;; Disable encoding comment insertion in ruby
 (setq-default ruby-insert-encoding-magic-comment nil)
+
+(setq-default ido-enable-flex-matching t)
+(setq-default flycheck-python-pycompile-executable "/usr/bin/python3")
 
 
 ;;; Hooks:

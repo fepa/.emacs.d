@@ -22,6 +22,7 @@
       '(
         ace-jump-mode
         fill-paragraph
+        org-beginning-of-line
         reindent-then-newline-and-indent
         sgml-slash
         toggle-truncate-lines

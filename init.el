@@ -116,8 +116,6 @@
 (setq-default ruby-insert-encoding-magic-comment nil)
 
 (setq-default ido-enable-flex-matching t)
-(setq-default flycheck-python-pycompile-executable "/usr/bin/python3")
-
 
 ;;; Hooks:
 
@@ -129,6 +127,8 @@
                       (setq indent-tabs-mode nil
                             tab-width 4))))
 
+; Remove log statement about flymake legacy
+(remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
 
 ;;; Code:
 

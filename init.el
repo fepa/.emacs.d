@@ -6,7 +6,6 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
 
 ;; Separate custom file
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
@@ -73,7 +72,6 @@
 (setq ring-bell-function 'ignore)
 
 (yas-global-mode 1)
-(nyan-mode)
 (ido-mode t)
 (winner-mode)
 (global-git-gutter-mode)

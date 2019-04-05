@@ -3,28 +3,33 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        c-electric-slash
-        electric-newline-and-maybe-indent
-        end-of-buffer
-        kill-region
-        org-delete-char
-        org-end-of-line
-        org-open-line
-        org-self-insert-command
-        org-shiftright
-        upcase-region
-        yaml-electric-backspace
-        yaml-electric-dash-and-dot
-        yas-expand
-        ))
+	c-electric-slash
+	electric-newline-and-maybe-indent
+	end-of-buffer
+	indent-for-tab-command
+	kill-region
+	markdown-outdent-or-delete
+	org-delete-char
+	org-end-of-line
+	org-open-line
+	org-self-insert-command
+	org-shiftright
+	rjsx-delete-creates-full-tag
+	rjsx-electric-lt
+	upcase-region
+	yaml-electric-backspace
+	yaml-electric-dash-and-dot
+	yas-expand
+	))
 
 (setq mc/cmds-to-run-once
       '(
-        ace-jump-mode
-        fill-paragraph
-        org-beginning-of-line
-        reindent-then-newline-and-indent
-        sgml-slash
-        toggle-truncate-lines
-        yas/expand
-        ))
+	ace-jump-mode
+	fill-paragraph
+	ido-find-file
+	org-beginning-of-line
+	reindent-then-newline-and-indent
+	sgml-slash
+	toggle-truncate-lines
+	yas/expand
+	))

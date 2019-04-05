@@ -20,9 +20,9 @@
 (set-face-background 'region "DarkViolet")
 
 ;; Font
-(set-frame-font "Ubuntu Mono:pixelsize=14:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=10:scalable=true")
+(set-frame-font "Ubuntu Mono:pixelsize=28:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=10:scalable=true")
 (global-font-lock-mode 3)
-(setq-default line-spacing 2)
+(setq-default line-spacing 3)
 
 ;; Remove menus and toolbars
 (scroll-bar-mode -1)
@@ -42,9 +42,9 @@
 (setq message-log-max 10000)
 
 ;; Spaces instead of tabs
-(setq-default indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
 ;; 4 spaces offset
-(setq-default tab-width 4)
+(setq tab-width 4)
 
 ;; Parenthesis matching
 (show-paren-mode t)
@@ -101,19 +101,22 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
-(setq-default web-mode-markup-indent-offset 2
-              web-mode-css-indent-offset 2
-              web-mode-code-indent-offset 2
-              web-mode-script-padding 2
-              web-mode-style-padding 2
-              js-indent-level 2
+(setq web-mode-markup-indent-offset 2
+      web-mode-css-indent-offset 2
+      web-mode-code-indent-offset 2
+      web-mode-script-padding 2
+      web-mode-style-padding 2
+      js-indent-level 2
 )
 
 ;; Disable encoding comment insertion in ruby
 (setq-default ruby-insert-encoding-magic-comment nil)
 
 (setq-default ido-enable-flex-matching t)
+
+(setq markdown-command "/usr/bin/pandoc")
 
 ;;; Hooks:
 

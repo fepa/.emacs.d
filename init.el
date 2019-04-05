@@ -71,6 +71,9 @@
 ;; Disable all alarms and bells
 (setq ring-bell-function 'ignore)
 
+;; HTML checkboxes in org-mode
+(setq org-html-checkbox-type 'html)
+
 (yas-global-mode 1)
 (ido-mode t)
 (winner-mode)

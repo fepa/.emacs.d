@@ -102,17 +102,22 @@
 (add-to-list 'auto-mode-alist '("\\.j2\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jinja2\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
 
-(setq web-mode-markup-indent-offset 2
-      web-mode-css-indent-offset 2
-      web-mode-code-indent-offset 2
-      web-mode-script-padding 2
-      web-mode-style-padding 2
-      js-indent-level 2
+(setq web-mode-markup-indent-offset 4
+      web-mode-css-indent-offset 4
+      web-mode-code-indent-offset 4
+      web-mode-script-padding 4
+      web-mode-style-padding 4
+      js-indent-level 4
 )
+
+(add-hook 'web-mode-hook (lambda ()
+ (web-mode-set-engine "django")))
+
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 
 ;; Disable encoding comment insertion in ruby
 (setq-default ruby-insert-encoding-magic-comment nil)

@@ -8,3 +8,5 @@ eshell/
 ido.last
 session.*
 elpa/
+recentf
+transient/

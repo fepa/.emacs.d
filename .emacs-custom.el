@@ -12,7 +12,7 @@
  '(line-spacing 3)
  '(org-agenda-files '("~/Dropbox/org/inbox.org" "~/Dropbox/org/reference.org"))
  '(package-selected-packages
-   '(rjsx-mode react-snippets groovy-mode zeal-at-point yasnippet yaml-mode web-mode use-package php-mode multiple-cursors markdown-mode magit git-gutter-fringe flycheck emoji-display coffee-mode ace-jump-mode))
+   '(scss-mode jsonnet-mode rjsx-mode react-snippets groovy-mode zeal-at-point yasnippet yaml-mode web-mode use-package php-mode multiple-cursors markdown-mode magit git-gutter-fringe flycheck emoji-display coffee-mode ace-jump-mode))
  '(web-mode-code-indent-offset 2)
  '(web-mode-css-indent-offset 2)
  '(web-mode-markup-indent-offset 2)

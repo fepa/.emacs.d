@@ -14,6 +14,7 @@
 	org-open-line
 	org-self-insert-command
 	org-shiftright
+	python-indent-shift-right
 	rjsx-delete-creates-full-tag
 	rjsx-electric-lt
 	upcase-region

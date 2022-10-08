@@ -3,10 +3,14 @@
 /auto-save-list
 games/
 eshell/
+emacs-desktop
 .emacs.desktop
 .emacs.desktop.lock
 ido.last
 session.*
 elpa/
+elpy/
+eln-cache/
 recentf
 transient/
+tramp

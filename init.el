@@ -1,11 +1,10 @@
 ;;; init.el --- Felix Panozzo's emacs configuration
 
-;;; Commentary:
-
 ;; Package managment
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(package-initialize)
 
 ;; Separate custom file
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
@@ -20,7 +19,7 @@
 (set-face-background 'region "DarkViolet")
 
 ;; Font
-(set-frame-font "Ubuntu Mono:pixelsize=28:foundry=unknown:weight=normal:slant=normal:width=normal:spacing=10:scalable=true")
+(set-frame-font "-DAMA-Ubuntu Mono-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")
 (global-font-lock-mode 3)
 (setq-default line-spacing 3)
 
@@ -71,16 +70,48 @@
 ;; Disable all alarms and bells
 (setq ring-bell-function 'ignore)
 
+;; Save backup files in a central directory
+(setq backup-directory-alist '((".*" . "~/.Trash")))
+
 ;; HTML checkboxes in org-mode
 (setq org-html-checkbox-type 'html)
 
-(yas-global-mode 1)
+(setq org-todo-keyword-faces
+      '(("TODO" . org-warning) ("WAITING" . "yellow"))
+      )
+
+
+;; Allow 20MB of memory (instead of 0.76MB) before calling
+;; garbage collection. This means GC runs less often, which speeds
+;; up some operations.
+(setq gc-cons-threshold 20000000)
+
+; Treat CamelCaseSubWords as separate words in every programming mode
+(global-subword-mode t)
+
+;; Don't assume sentences should have 2 spaces after periods
+(setq sentence-end-double-space nil)
+
+;; Ask if you're sure that you want to close Emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; Add file sizes in human-readable units (KB, MB, etc) to
+;; dired buffers
+(setq-default dired-listing-switches "-alh")
+
+;; Don't ask `yes/no?', ask `y/n?'
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Configure elpy to use python3
+;; (setq elpy-rpc-python-command "python3")
+;; (elpy-enable)
+
 (ido-mode t)
 (winner-mode)
-(global-git-gutter-mode)
 (ido-everywhere)
-(global-flycheck-mode)
+;; (autoload 'global-flycheck-mode "global-flycheck-mode")
 ;; Read desktop file on startup
+(setq desktop-dirname "~/.emacs.d/")
 (desktop-read)
 
 (global-set-key [f5] 'toggle-truncate-lines)
@@ -104,20 +135,27 @@
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 
 (setq web-mode-markup-indent-offset 4
       web-mode-css-indent-offset 4
       web-mode-code-indent-offset 4
       web-mode-script-padding 4
       web-mode-style-padding 4
-      js-indent-level 4
+      js-indent-level 2
+      ruby-indent-level 4
 )
-
-(add-hook 'web-mode-hook (lambda ()
- (web-mode-set-engine "django")))
 
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+(autoload 'jsonnet-mode "jsonnet-mode")
+(add-to-list 'auto-mode-alist '("\\.jsonnet\\'" . jsonnet-mode))
+
+(autoload 'dumb-jump-mode "dump-jump-mode")
+(global-git-gutter-mode 1 1)
+
+(editorconfig-mode 1)
 
 ;; Disable encoding comment insertion in ruby
 (setq-default ruby-insert-encoding-magic-comment nil)
@@ -125,6 +163,8 @@
 (setq-default ido-enable-flex-matching t)
 
 (setq markdown-command "/usr/bin/pandoc")
+
+(setq dired-listing-switches "-alh")
 
 ;;; Hooks:
 
@@ -136,8 +176,14 @@
                       (setq indent-tabs-mode nil
                             tab-width 4))))
 
+(add-hook 'rjsx-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode nil)
+            (setq js2-strict-missing-semi-warning nil)))
+
 ; Remove log statement about flymake legacy
 (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
+
 
 ;;; Code:
 
@@ -147,13 +193,5 @@
     (apply func args)))
 (advice-add 'upcase-region :around 'ensure-region-active)
 (advice-add 'downcase-region :around 'ensure-region-active)
-
-(defun gtd ()
-  "Open gtd files."
-   (interactive)
-   (find-file "~/Dropbox/org/inbox.org")
-   (split-window-right)
-   (find-file "~/Dropbox/org/projects.org")
-   )
 
 ;;; init.el ends here

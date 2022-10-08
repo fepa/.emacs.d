@@ -153,7 +153,6 @@
 (add-to-list 'auto-mode-alist '("\\.jsonnet\\'" . jsonnet-mode))
 
 (autoload 'dumb-jump-mode "dump-jump-mode")
-(global-git-gutter-mode 1 1)
 
 (editorconfig-mode 1)
 
